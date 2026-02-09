@@ -1,0 +1,183 @@
+#{
+ # allFilms {
+  #  films {
+   #   title
+    #}
+  #}
+#}
+
+#query {
+ # allPeople {
+  #  people {
+   #   name
+    #  id
+    #}
+    #}
+  
+#query {
+ # allPlanets(first: 5) {
+  #  planets {
+   #   name
+  #    	}
+  # }
+#}
+
+#query {
+ # allStarships(first: 3) {
+  #  starships {
+   #   name
+    #  model
+    #}
+  #}
+#}
+
+#query {
+ # allPeople(first: 5) {
+  #  people {
+   #   name
+    #  starshipConnection{
+     #   starships {
+      #    name
+       # }
+        
+      #}
+    #}
+    
+#query {
+ # allSpecies(last: 5) {
+  #  species {
+   #   name	
+    #  language
+    #}
+  #}
+  #}
+  
+#query {
+ # allPlanets(last: 5) {
+  #  planets {
+   #   name
+    #  climates
+    #}
+  #}
+# }
+    
+#query getVehicleName {
+ # allVehicles (first: 3) {
+  #  vehicles {
+   #   name	
+    #  costInCredits
+      
+    #}
+  #}
+#}  
+
+#query getFilmCharacters {
+ # allFilms (first: 1) {
+  #  films {
+   #   characterConnection {
+    #    characters{
+     #     name
+      #    id
+       # }
+      #}
+        
+      #}
+    #}
+  #}
+  
+#uery MultiFilmCharacters {
+ #allPeople {
+  # people {
+   #  name
+    # filmConnection {
+     #  films {
+      #   title
+       #}
+      #
+    #
+  #
+  
+ #query {
+  # allPeople {
+   #  totalCount
+    #
+ #}
+
+#uery GetCharacterProfile {
+ #person(personID: 1) {
+  # name
+   #birthYear
+    #eyeColor
+    
+  
+   #homeworld {
+    # name
+     #terrains
+     #population
+   #}
+    
+    
+   #filmConnection {
+    # films {
+     #  title
+      # releaseDate
+     #}
+   #}
+    
+  
+  # starshipConnection {
+   #  starships {
+    #   name
+     #  model
+      # hyperdriveRating
+     #}
+   #}
+ #}
+# }
+
+#uery getCharacterHometown {
+# allPeople(first: 5) {
+ #  people {
+  #   name
+   #  homeworld {
+    #   name
+     #  population
+    # }
+   #}
+
+#uery vehiclesPilotandSpecies {
+ #allVehicles {
+  # vehicles {
+  #   pilotConnection {
+  #     pilots {
+   #      name
+    #     species {
+     #      name
+      #   }
+       #}
+     #}
+   #}
+ #}
+# }
+
+query {
+  allFilms(first: 3) {
+    films {
+      starshipConnection {
+        starships {
+          name
+        }
+      }
+      planetConnection {
+        planets {
+          name
+        }
+      } # <--- MISSING BRACE HERE
+      characterConnection {
+        characters {
+          name
+        }
+      }
+    }
+  }
+}
